@@ -3,12 +3,15 @@ const cors = require('cors'); // This is a middleware that allows Cross-Origin R
 const app = express(); // This line initializes an Express application instance, which you'll use to define routes and middleware.
 const PORT = process.env.PORT || 5000; // This sets the port on which your server will listen. It first checks for an environment variable PORT. If it doesn’t exist, it defaults to 5000.
 const mongoose = require('mongoose');
+const booksRoutes = require('./routes/books-route'); 
 
 require('dotenv').config(); // Load .env variables
 
 // Middleware
 app.use(cors()); // This enables CORS for all routes, allowing requests from different origins.
 app.use(express.json()); // This middleware parses incoming JSON requests, making the request body accessible via req.body
+// Use the books routes
+app.use('/api', booksRoutes); // Mount the books routes
 
 // MongoDB connection
 const mongoURI = process.env.MONGO_API; // Use the environment variable
