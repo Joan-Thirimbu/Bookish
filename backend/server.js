@@ -11,7 +11,7 @@ app.use(cors()); // This enables CORS for all routes, allowing requests from dif
 app.use(express.json()); // This middleware parses incoming JSON requests, making the request body accessible via req.body
 
 // MongoDB connection
-const mongoURI = process.env.MONGO_URI; // Use the environment variable
+const mongoURI = process.env.MONGO_API; // Use the environment variable
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
