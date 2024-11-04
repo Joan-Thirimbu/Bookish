@@ -7,7 +7,7 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
 import Dashboard from './pages/dashboard.vue'
 import BooksPage from './pages/books-page.vue'
-import BookDetails from './pages/cart.vue'
+import BookDetails from './pages/book-detail-page.vue'
 import Cart from './pages/cart.vue'
 
 createApp(App)
@@ -24,7 +24,7 @@ createApp(App)
         path: '/library',
         component: BooksPage,
     },{
-        path: '/librar/:bookId',
+        path: '/library/:bookId',
         component: BookDetails,
     }]
 }))

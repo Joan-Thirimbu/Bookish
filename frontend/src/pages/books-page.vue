@@ -1,13 +1,16 @@
 <template>
-    <h1 class="text-center pb-4"> Books </h1>
     <div class="grid-wrap gy-3">
         <div class="row">
             <div class="book-item col-xs-12 col-sm-6 d-flex" v-for="book in books" :key="book.isbn">
-                <div class="card book-cover">
-                    <img :src="book.coverImage"/>
-                </div>
+                <router-link :to="'/library/' + book.isbn">
+                    <div class="card book-cover">
+                        <img :src="book.coverImage"/>
+                    </div>
+                </router-link>
                 <div class="book-details pt-3">
-                    <h5 class="book-name m-0">{{ book.title }}</h5>
+                    <router-link :to="'/library/' + book.isbn">
+                        <h5 class="book-name m-0">{{ book.title }}</h5>
+                    </router-link>
                     <div class="d-flex book-author my-1">
                         <i class="icon material-icons">person</i>
                         <span class="author align-self-center ms-1">{{ book.author }}</span>
@@ -38,13 +41,13 @@ export default{
 <style>
 .grid-wrap {
     padding: 0 140px; 
-    max-width: 1440px; 
+    max-width: 1280px; 
     margin: 0 auto; 
 }
 .book-item{
     justify-content: center;
 }
-.book-cover {
+.book-cover{
     border: none;
     transition: transform 0.2s;
     display: inline-block;
@@ -52,7 +55,6 @@ export default{
 .book-cover img{
     width: 100px;
     height: 150px;
-    border: 2px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
