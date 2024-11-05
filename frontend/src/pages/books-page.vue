@@ -1,35 +1,16 @@
 <template>
-    <div class="grid-wrap gy-3">
-        <div class="row">
-            <div class="book-item col-xs-12 col-sm-6 d-flex" v-for="book in books" :key="book.isbn">
-                <router-link :to="'/library/' + book.isbn">
-                    <div class="card book-cover">
-                        <img :src="book.coverImage"/>
-                    </div>
-                </router-link>
-                <div class="book-details pt-3">
-                    <router-link :to="'/library/' + book.isbn">
-                        <h5 class="book-name m-0">{{ book.title }}</h5>
-                    </router-link>
-                    <div class="d-flex book-author my-1">
-                        <i class="icon material-icons">person</i>
-                        <span class="author align-self-center ms-1">{{ book.author }}</span>
-                    </div>
-                    <p class="book-price my-2 limited-text">{{ book.description }}</p>
-                    <div>
-                        <span v-for="(genre, index) in book.genres" :key="index" class="book-genre-span"> {{ genre }}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <bookList :books="books"/>
 </template>
 
 <script>
 import { books } from '../temp-data';
+import bookList from '../components/book-list.vue';
 
 export default{
     name: "BooksPages",
+    components: {
+        bookList,
+    },
     data(){
         return {
             books,
@@ -39,9 +20,13 @@ export default{
 </script>
 
 <style>
+.row h3{
+    text-align: center;
+    margin: 1.5em 0;
+}
 .grid-wrap {
     padding: 0 140px; 
-    max-width: 1280px; 
+    max-width: 1440px; 
     margin: 0 auto; 
 }
 .book-item{
@@ -51,6 +36,7 @@ export default{
     border: none;
     transition: transform 0.2s;
     display: inline-block;
+    background: transparent;
 }
 .book-cover img{
     width: 100px;
@@ -90,7 +76,7 @@ export default{
     padding: 4px 14px 6px 15px;
     border-radius: 14px;
     border: 1px solid #E6E5E5;
-    margin-right: 3px;
+    margin-right: 5px;
     color: #a2a2a2;
     line-height: 1.36;
     display: inline-block;
