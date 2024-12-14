@@ -58,3 +58,10 @@ Site link will be provided once everything is done. (Currently, it's under const
 This project is the intellectual property of `Joan Thirimbu`. You may not copy, modify, distribute, or use any part of this code without explicit permission from the author.
 
 No license is granted to use, modify, or distribute this code, except as authorized by the author.
+
+### Contact
+
+If you have any questions, suggestions, or issues, feel free to reach out!
+
+- **Author/Developer/Designer**: [Joan Thirimbu](https://github.com/Joan-Thirimbu)
+- **LinkedIn**: [Joan (Wangare) Thirimbu](https://www.linkedin.com/in/joan-thirimbu-969008231/)
